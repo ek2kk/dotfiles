@@ -1,0 +1,46 @@
+[user]
+    name  = Egor Kuznetsov
+    email = ek2kkk@yandex.ru
+
+[core]
+    compression  = 9
+    preloadindex = true
+    editor       = nvim
+    autocrlf     = input
+
+[filter "lfs"]
+    clean   = git-lfs clean -- %f
+    smudge  = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[push]
+    default = simple
+
+[pull]
+    rebase = false
+
+[init]
+    defaultBranch = main
+
+[color]
+    ui = auto
+
+[merge]
+    conflictstyle = zdiff3
+
+[diff]
+    algorithm = histogram
+
+[alias]
+    st = status -sb
+    co = checkout
+    br = branch
+    ci = commit
+    lg = log --graph --oneline --decorate --all
+[credential "https://origin.cursor.com/git"]
+	helper = 
+	helper = !/Users/ek/.local/bin/origin credential-helper
+[credential "https://origin.cursor.com"]
+	helper = 
+	helper = !/Users/ek/.local/bin/origin credential-helper
