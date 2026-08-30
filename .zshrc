@@ -89,7 +89,6 @@ export FZF_ALT_C_COMMAND="fd --type d --hidden --strip-cwd-prefix --exclude .git
 
 # ---------- Plugins ----------
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # ---------- Better defaults ----------
 export LESS="-R"
@@ -101,3 +100,5 @@ export BAT_THEME="TwoDark"
 
 # ---------- Other aliases ------------
 alias v="nvim"
+
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

@@ -96,9 +96,8 @@
 | --- | --- | --- |
 | `<leader>mp` | Normal, Visual | Отформатировать файл или выделенный диапазон |
 
-## Which-key и изображения
+## Which-key
 
 | Клавиши | Режим | Что делает |
 | --- | --- | --- |
 | `<leader>?` | Normal | Показать buffer-local keymaps через which-key |
-| `<leader>p` | Normal | Вставить изображение из системного clipboard |
