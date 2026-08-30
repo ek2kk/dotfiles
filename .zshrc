@@ -34,10 +34,6 @@ alias ll="eza -la --icons --group-directories-first --git"
 alias la="eza -a --icons --group-directories-first"
 alias tree="eza --tree --icons"
 
-alias cat="bat"
-alias grep="rg"
-alias find="fd"
-
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -84,7 +80,8 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 
 # ---------- fzf ----------
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+bindkey -e
+source "$(brew --prefix fzf)/shell/key-bindings.zsh"
 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
