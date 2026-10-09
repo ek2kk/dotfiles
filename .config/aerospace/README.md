@@ -36,7 +36,7 @@ Workspaces `1–7` постоянные: пустые не скрываются.
 | --- | --- |
 | `Alt-B` | Workspace 1 и Zen |
 | `Alt-F` | Finder |
-| `Alt-Q` | Workspace 2 и WezTerm |
+| `Alt-Q` | Workspace 2 и Ghostty |
 | `Alt-S` | Workspace 3 и LOOP |
 | `Alt-T` | Workspace 3 и Telegram |
 | `Alt-G` | Workspace 5 и ChatGPT |
@@ -59,6 +59,6 @@ Workspaces `1–7` постоянные: пустые не скрываются.
 
 - Finder, System Settings и V2Box открываются floating.
 - Zen открывается в workspace 1.
-- WezTerm и Zed — в workspace 2.
+- Ghostty и Zed — в workspace 2.
 - LOOP и Telegram — в workspace 3.
 - ChatGPT и Codex — в workspace 5.

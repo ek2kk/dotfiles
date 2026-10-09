@@ -24,5 +24,4 @@ Entry point: [`init.lua`](./init.lua). Плагины управляются `la
 | `Space d` | Diagnostics текущего buffer |
 | `Space mp` | Форматировать файл или выделение |
 | `Ctrl-H/J/K/L` | Перейти в соседний split |
-| `jj` в insert mode | Escape |
 | `Esc` | Снять подсветку поиска |

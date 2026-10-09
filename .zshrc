@@ -3,6 +3,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/ek-vault"
 
 # History
 HISTFILE="$HOME/.zsh_history"
@@ -41,6 +42,11 @@ alias ....="cd ../../.."
 alias c="clear"
 alias h="history"
 alias reload="source ~/.zshrc"
+
+# Obsidian
+alias ov='cd "$OBSIDIAN_VAULT"'
+alias on='nvim "$OBSIDIAN_VAULT"'
+alias oo='open "obsidian://open?vault=ek-vault"'
 
 # ---------- Git ----------
 alias g="git"
@@ -102,3 +108,9 @@ export BAT_THEME="TwoDark"
 alias v="nvim"
 
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
+# <<< grok installer <<<

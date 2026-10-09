@@ -18,7 +18,6 @@
 | `<space>x` | Visual | Выполнить выделение как Lua |
 | `<Esc>` | Normal | Убрать подсветку поиска |
 | `<leader>d` | Normal | Открыть diagnostics текущего буфера в Snacks Picker |
-| `jj` | Insert | Выйти в Normal mode |
 | `<C-h>` | Normal | Перейти в окно слева |
 | `<C-l>` | Normal | Перейти в окно справа |
 | `<C-j>` | Normal | Перейти в окно снизу |
@@ -46,6 +45,16 @@
 | `<leader>fs` | Normal | Поиск строки по проекту |
 | `<leader>fc` | Normal | Поиск строки под курсором по проекту |
 | `<leader>fk` | Normal | Открыть список keymaps |
+
+## Obsidian vault
+
+| Клавиши | Режим | Что делает |
+| --- | --- | --- |
+| `<leader>nf` | Normal | Найти Markdown-файл в `ek-vault` |
+| `<leader>ng` | Normal | Искать текст по `ek-vault` |
+| `<leader>ne` | Normal | Открыть `ek-vault` в file explorer |
+| `<leader>na` | Normal | Переместить текущую заметку в `99-archive` |
+| `<leader>ni` | Normal | Создать заметку с timestamp в `00-inbox` |
 
 ## LSP
 

@@ -1,0 +1,49 @@
+# Managed in ~/dotfiles; symlink only this file into ~/.config/herdr/.
+onboarding = false
+
+[theme]
+name = "one-dark"
+auto_switch = false
+
+[terminal]
+new_cwd = "follow"
+
+[keys]
+# Press Ctrl-B, release Ctrl, then press the action key (English layout).
+# Cmd shortcuts stay with WezTerm; Option shortcuts stay with AeroSpace.
+prefix = "ctrl+b"
+
+# Tabs: create, close, cycle, select by number.
+new_tab = "prefix+c"
+close_tab = "prefix+shift+x"
+previous_tab = "prefix+p"
+next_tab = "prefix+n"
+switch_tab = "prefix+1..9"
+rename_tab = "prefix+shift+t"
+
+# Workspaces: arrows cycle; w opens the workspace navigator.
+previous_workspace = "prefix+up"
+next_workspace = "prefix+down"
+workspace_picker = "prefix+w"
+new_workspace = "prefix+shift+n"
+rename_workspace = "prefix+shift+w"
+close_workspace = "prefix+shift+d"
+
+# Agents: arrows cycle; g opens the session navigator.
+previous_agent = "prefix+left"
+next_agent = "prefix+right"
+goto = "prefix+g"
+
+# Other actions keep built-in defaults: h/j/k/l focus panes, v/- split,
+# x closes a pane, z zooms, b toggles sidebar, ? opens help.
+detach = "prefix+q"
+reload_config = "prefix+shift+r"
+
+[ui]
+confirm_close = true
+prompt_new_tab_name = false
+show_agent_labels_on_pane_borders = true
+status_indicators = "dots"
+
+[ui.toast]
+delivery = "system"

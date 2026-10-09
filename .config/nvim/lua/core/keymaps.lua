@@ -10,8 +10,6 @@ keymap.set("n", "<leader>d", function()
   Snacks.picker.diagnostics_buffer()
 end, { desc = "Open [D]iagnostics" })
 
-keymap.set("i", "jj", "<ESC>")
-
 keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })

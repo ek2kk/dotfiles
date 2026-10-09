@@ -7,6 +7,7 @@
 - `.zshenv`, `.zprofile`, `.zshrc` — Zsh, Homebrew, OrbStack, aliases, `zoxide`, `fzf` и плагины;
 - `.config/starship.toml` — prompt Starship в палитре Catppuccin Mocha;
 - `.config/ghostty/config` и `.config/wezterm/wezterm.lua` — терминалы Ghostty и WezTerm;
+- `.config/herdr/config.toml` — workspaces, вкладки и AI-агенты внутри терминала;
 - `.config/aerospace/aerospace.toml` — tiling window manager AeroSpace и hotkeys;
 - `.config/fastfetch/config.jsonc` — system info в терминале;
 - `.config/git/config` — Git aliases и defaults;
@@ -35,15 +36,14 @@ history между shell-сессиями.
 часто посещаемым каталогам. `fzf` использует `fd`, ищет в скрытых файлах и
 исключает `.git`.
 
-| Бинд | Действие |
-| --- | --- |
-| `Ctrl-R` | Fuzzy search по истории команд |
-| `Ctrl-T` | Выбрать файл или каталог и вставить путь в командную строку |
-| `Option-C` | Выбрать каталог и перейти в него |
+| Бинд       | Действие                                                    |
+| ---------- | ----------------------------------------------------------- |
+| `Ctrl-R`   | Fuzzy search по истории команд                              |
+| `Ctrl-T`   | Выбрать файл или каталог и вставить путь в командную строку |
+| `Option-C` | Выбрать каталог и перейти в него                            |
 
 Используется стандартный `emacs` keymap (`bindkey -e`), поэтому Vim command
-mode по `Esc` отключён. `Option-C` намеренно не назначен в AeroSpace, чтобы
-оставаться доступным для `fzf`.
+mode по `Esc` отключён.
 
 ### Aliases и defaults
 
@@ -52,6 +52,8 @@ mode по `Esc` отключён. `Option-C` намеренно не назна�
   и `find` не переопределяются.
 - Навигация: `..`, `...`, `....`; `c` — clear, `h` — history, `reload` —
   перечитать `.zshrc`, `v` — `nvim`.
+- Obsidian: `ov` — перейти в `ek-vault`, `on` — открыть vault в Neovim,
+  `oo` — открыть vault в Obsidian.
 - Git: `g`, `gs`, `ga`, `gaa`, `gc`, `gcm`, `gp`, `gpl`, `gb`, `gco`, `gd`, `gl`.
 - Python: `py` → `python3`, `activate` активирует `.venv`; `gpu` выводит версии
   PyTorch и доступность CUDA/MPS. Установлены `PYTHONDONTWRITEBYTECODE=1`,
@@ -73,6 +75,10 @@ ln -sfn ~/dotfiles/.config/{aerospace,fastfetch,ghostty,git,nvim} ~/.config/
 ln -sfn ~/dotfiles/.config/{starship.toml,wezterm} ~/.config/
 exec zsh -l
 ```
+
+Herdr подключается отдельно: только `config.toml`, поскольку каталог также
+содержит runtime-данные. Инструкция и бинды — в
+[`.config/herdr/README.md`](./.config/herdr/README.md).
 
 Конфигурация ожидает установленные через Homebrew утилиты:
 
