@@ -1,2 +1,4 @@
 nvim.log
 .ruff_cache/
+
+lazy-lock.json

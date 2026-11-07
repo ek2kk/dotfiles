@@ -40,6 +40,9 @@ opt.confirm = true
 
 opt.swapfile = false
 
+-- Russian layout keys act as their English counterparts outside Insert mode
+opt.langmap = require("core.layout").langmap()
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",
   group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),

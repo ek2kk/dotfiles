@@ -9,51 +9,66 @@ auto_switch = false
 new_cwd = "follow"
 
 [keys]
-# Press Ctrl-B, release Ctrl, then press the action key (English layout).
+# Press Ctrl-B, release Ctrl, then press the action key (English or Russian layout).
 # Cmd shortcuts stay with Ghostty; Option shortcuts stay with AeroSpace.
 prefix = "ctrl+b"
 
 # Tabs: create, close, cycle, select by number.
-new_tab = "prefix+c"
-close_tab = "prefix+shift+x"
-previous_tab = "prefix+p"
-next_tab = "prefix+n"
+new_tab = ["prefix+c", "prefix+с"]
+close_tab = ["prefix+shift+x", "prefix+shift+ч"]
+previous_tab = ["prefix+p", "prefix+з"]
+next_tab = ["prefix+n", "prefix+т"]
 switch_tab = "prefix+1..9"
-rename_tab = "prefix+shift+t"
+rename_tab = ["prefix+shift+t", "prefix+shift+е"]
 
 # Workspaces: arrows cycle; w opens the workspace navigator.
 previous_workspace = "prefix+up"
 next_workspace = "prefix+down"
-workspace_picker = "prefix+w"
-new_workspace = "prefix+shift+n"
-rename_workspace = "prefix+shift+w"
-close_workspace = "prefix+shift+d"
+workspace_picker = ["prefix+w", "prefix+ц"]
+new_workspace = ["prefix+shift+n", "prefix+shift+т"]
+rename_workspace = ["prefix+shift+w", "prefix+shift+ц"]
+close_workspace = ["prefix+shift+d", "prefix+shift+в"]
 
 # Agents: arrows cycle; g opens the session navigator.
 previous_agent = "prefix+left"
 next_agent = "prefix+right"
-goto = "prefix+g"
+goto = ["prefix+g", "prefix+п"]
 
-# Other actions keep built-in defaults: h/j/k/l focus panes, v/- split,
-# x closes a pane, z zooms, b toggles sidebar, ? opens help.
-detach = "prefix+q"
-reload_config = "prefix+shift+r"
+# - splits and ? opens help, as in the built-in defaults.
+detach = ["prefix+q", "prefix+й"]
+reload_config = ["prefix+shift+r", "prefix+shift+к"]
+
+# Built-in defaults, repeated to add the Russian layout.
+settings = ["prefix+s", "prefix+ы"]
+open_notification_target = ["prefix+o", "prefix+щ"]
+new_worktree = ["prefix+shift+g", "prefix+shift+п"]
+rename_pane = ["prefix+shift+p", "prefix+shift+з"]
+edit_scrollback = ["prefix+e", "prefix+у"]
+focus_pane_left = ["prefix+h", "prefix+р"]
+focus_pane_down = ["prefix+j", "prefix+о"]
+focus_pane_up = ["prefix+k", "prefix+л"]
+focus_pane_right = ["prefix+l", "prefix+д"]
+split_vertical = ["prefix+v", "prefix+м"]
+close_pane = ["prefix+x", "prefix+ч"]
+zoom = ["prefix+z", "prefix+я"]
+resize_mode = ["prefix+r", "prefix+к"]
+toggle_sidebar = ["prefix+b", "prefix+и"]
 
 # Open the active pane's directory in Finder
 [[keys.command]]
-key = "prefix+f"
+key = ["prefix+f", "prefix+а"]
 type = "shell"
 command = 'open "$HERDR_ACTIVE_PANE_CWD"'
 
 # Close all other panes in the current tab
 [[keys.command]]
-key = "prefix+shift+o"
+key = ["prefix+shift+o", "prefix+shift+щ"]
 type = "shell"
 command = '''herdr pane list | jq -r --arg t "$HERDR_ACTIVE_TAB_ID" --arg p "$HERDR_ACTIVE_PANE_ID" '.result.panes[] | select(.tab_id == $t and .pane_id != $p) | .pane_id' | xargs -n1 herdr pane close'''
 
 # Open lazygit in a new pane
 [[keys.command]]
-key = "prefix+shift+l"
+key = ["prefix+shift+l", "prefix+shift+д"]
 type = "pane"
 command = 'cd "$HERDR_ACTIVE_PANE_CWD" && lazygit'
 
