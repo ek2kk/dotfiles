@@ -52,6 +52,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
     opts.desc = "Show documentation for what is under cursor"
     keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
+    -- Set here, not globally: Words needs LSP, and the Python ftplugin has its own buffer-local ]] and [[
+    opts.desc = "Next reference"
+    keymap.set("n", "]]", function()
+      Snacks.words.jump(vim.v.count1)
+    end, opts)
+
+    opts.desc = "Previous reference"
+    keymap.set("n", "[[", function()
+      Snacks.words.jump(-vim.v.count1)
+    end, opts)
+
     opts.desc = "Restart LSP"
     keymap.set("n", "<leader>rs", "<cmd>LspRestart<CR>", opts)
   end,

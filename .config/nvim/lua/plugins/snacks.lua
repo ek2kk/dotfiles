@@ -52,6 +52,7 @@ return {
       },
     },
     notifier = { enabled = true },
+    words = { enabled = true },
   },
   keys = {
     { "<leader>gg", function() Snacks.lazygit() end, desc = "LazyGit" },
@@ -62,6 +63,9 @@ return {
     { "<leader>fs", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>fc", function() Snacks.picker.grep_word() end, desc = "Grep word" },
     { "<leader>fk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+    { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
+    { "<leader>fl", function() Snacks.picker.resume() end, desc = "Resume last picker" },
+    { "<leader>rf", function() Snacks.rename.rename_file() end, desc = "Rename file" },
     { "<leader>nf", function() Snacks.picker.files({ cwd = vault, hidden = false }) end, desc = "Find vault note" },
     { "<leader>ng", function() Snacks.picker.grep({ cwd = vault, hidden = false }) end, desc = "Grep vault" },
     { "<leader>ne", function() Snacks.explorer({ cwd = vault }) end, desc = "Explore vault" },

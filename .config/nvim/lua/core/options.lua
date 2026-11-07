@@ -16,6 +16,14 @@ opt.ignorecase = true
 opt.smartcase = true
 
 opt.cursorline = true
+opt.signcolumn = "yes"
+opt.laststatus = 3
+opt.winborder = "rounded"
+
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldlevel = 99
+opt.fillchars:append("diff:╱")
 
 opt.splitright = true
 opt.splitbelow = true

@@ -32,6 +32,7 @@ return {
       ensure_installed = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
+        "shfmt", -- shell formatter
       },
     },
     dependencies = {

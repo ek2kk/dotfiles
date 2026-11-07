@@ -20,7 +20,10 @@ brew install node
 - `OneDark`, Treesitter, lualine и render-markdown.
 - `Snacks`: explorer, picker, grep, dashboard и notifications.
 - LSP через Mason: `lua_ls`, `ruff`, `ty`, `bashls`; completion — `blink.cmp`.
-- Format on save: Prettier (JSON/YAML/Markdown), Stylua (Lua), Ruff (Python).
+- Format on save: Prettier (JSON/YAML/Markdown), Stylua (Lua), Ruff (Python),
+  shfmt (sh); `:ToggleFormatter` отключает его для текущего буфера.
+- Общая строка статуса, постоянная sign column, скруглённые рамки всплывающих
+  окон и фолды через Treesitter.
 
 ## Часто используемые бинды
 

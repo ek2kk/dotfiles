@@ -22,6 +22,11 @@ return {
       "css",
       "javascript",
       "latex",
+      "toml",
+      "diff",
+      "sql",
+      "typescript",
+      "tsx",
     }
 
     require("nvim-treesitter").install(parsers)
