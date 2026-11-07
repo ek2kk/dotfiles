@@ -6,6 +6,14 @@ Entry point: [`init.lua`](./init.lua). Плагины управляются `la
 
 ## База
 
+Для установки Prettier и Bash Language Server через Mason нужны Node.js и npm:
+
+```sh
+brew install node
+```
+
+Они должны быть доступны в `PATH` при запуске Neovim.
+
 - Leader — `Space`, local leader — `\\`.
 - Relative numbers, `4` spaces, clipboard `unnamedplus`, persistent undo,
   `scrolloff=10`, smart case search, splits вправо и вниз.
@@ -21,6 +29,8 @@ Entry point: [`init.lua`](./init.lua). Плагины управляются `la
 | `Space e` / `Cmd-E` | File explorer |
 | `Space ff` | Найти файл |
 | `Space fs` | Grep |
+| `Space gg` | LazyGit (нужен `brew install lazygit`) |
+| `Space gd` | CodeDiff: просмотр изменений Git |
 | `Space d` | Diagnostics текущего buffer |
 | `Space mp` | Форматировать файл или выделение |
 | `Ctrl-H/J/K/L` | Перейти в соседний split |

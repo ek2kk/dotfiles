@@ -11,7 +11,8 @@
 - `.config/aerospace/aerospace.toml` — tiling window manager AeroSpace и hotkeys;
 - `.config/fastfetch/config.jsonc` — system info в терминале;
 - `.config/git/config` — Git aliases и defaults;
-- `.config/nvim` — Neovim-конфигурация с `lazy.nvim`.
+- `.config/nvim` — Neovim-конфигурация с `lazy.nvim`;
+- `.config/zed/settings.json` — настройки редактора Zed.
 
 Детальное описание каждой конфигурации — в [`.config/README.md`](./.config/README.md).
 
@@ -79,6 +80,10 @@ exec zsh -l
 Herdr подключается отдельно: только `config.toml`, поскольку каталог также
 содержит runtime-данные. Инструкция и бинды — в
 [`.config/herdr/README.md`](./.config/herdr/README.md).
+
+Zed также подключается отдельным файлом `settings.json`, чтобы сохранить
+остальное содержимое `~/.config/zed`. Команды подключения — в
+[`.config/zed/README.md`](./.config/zed/README.md).
 
 Конфигурация ожидает установленные через Homebrew утилиты:
 

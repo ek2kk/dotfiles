@@ -47,6 +47,7 @@ return {
     notifier = { enabled = true },
   },
   keys = {
+    { "<leader>gg", function() Snacks.lazygit() end, desc = "LazyGit" },
     { "<leader>e", function() Snacks.explorer() end, desc = "File explorer" },
     { "<D-e>", function() Snacks.explorer() end, desc = "File explorer" },
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find files" },

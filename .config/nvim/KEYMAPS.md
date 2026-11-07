@@ -46,6 +46,17 @@
 | `<leader>fc` | Normal | Поиск строки под курсором по проекту |
 | `<leader>fk` | Normal | Открыть список keymaps |
 
+## Git
+
+| Клавиши | Режим | Что делает |
+| --- | --- | --- |
+| `<leader>gg` | Normal | Открыть LazyGit через Snacks |
+| `<leader>gd` | Normal | Открыть CodeDiff для проверки изменений |
+
+Для LazyGit нужен исполняемый файл `lazygit` (`brew install lazygit`).
+В CodeDiff: `]f` / `[f` — файлы, `]c` / `[c` — изменения,
+`t` — переключить представление, `q` — закрыть.
+
 ## Obsidian vault
 
 | Клавиши | Режим | Что делает |

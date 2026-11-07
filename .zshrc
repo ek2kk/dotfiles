@@ -2,7 +2,6 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
 export OBSIDIAN_VAULT="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/ek-vault"
 
 # History
@@ -15,10 +14,7 @@ setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 
-# Completion
-autoload -Uz compinit
-compinit
-
+# Completion (compinit runs once, after all fpath changes — see "Completion init")
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 setopt AUTO_MENU
@@ -73,17 +69,17 @@ export PYTHONUNBUFFERED=1
 export UV_LINK_MODE=copy
 
 # CUDA/MPS helpers
-alias gpu="python3 - <<'PY'
+gpu() {
+  python3 - <<'PY'
 import torch
 print('torch:', torch.__version__)
 print('cuda:', torch.cuda.is_available())
 print('mps:', hasattr(torch.backends, 'mps') and torch.backends.mps.is_available())
-PY"
+PY
+}
 
 # ---------- Navigation ----------
-eval "$(zoxide init zsh)"
-
-alias cd="z"
+eval "$(zoxide init zsh --cmd cd)"
 
 # ---------- fzf ----------
 bindkey -e
@@ -100,17 +96,38 @@ source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 export LESS="-R"
 export BAT_THEME="TwoDark"
 
-# ---------- Local overrides ----------
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
-
 # ---------- Other aliases ------------
 alias v="nvim"
 
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# ---------- AI / Kubernetes / Herdr ----------
+alias po="perry opencode"
+alias pc="perry codex"
+alias hw="herdr session attach work"
+alias hp="herdr session attach personal"
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # >>> grok installer >>>
 export PATH="$HOME/.grok/bin:$PATH"
 fpath=(~/.grok/completions/zsh $fpath)
-autoload -Uz compinit && compinit -C
 # <<< grok installer <<<
+
+# ---------- Completion init ----------
+autoload -Uz compinit && compinit
+
+# kubectl completion (cached: generating it on every start is slow)
+if (( $+commands[kubectl] )); then
+  _kubectl_comp="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/kubectl-completion.zsh"
+  if [[ ! -s $_kubectl_comp || $commands[kubectl] -nt $_kubectl_comp ]]; then
+    mkdir -p "${_kubectl_comp:h}"
+    kubectl completion zsh > "$_kubectl_comp"
+  fi
+  source "$_kubectl_comp"
+  unset _kubectl_comp
+fi
+
+# ---------- Local overrides ----------
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# ---------- Syntax highlighting (must be last) ----------
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
