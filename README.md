@@ -6,11 +6,12 @@
 
 - `.zshenv`, `.zprofile`, `.zshrc` — Zsh, Homebrew, OrbStack, aliases, `zoxide`, `fzf` и плагины;
 - `.config/starship.toml` — prompt Starship в палитре Catppuccin Mocha;
-- `.config/ghostty/config` и `.config/wezterm/wezterm.lua` — терминалы Ghostty и WezTerm;
+- `.config/ghostty/config` — терминал Ghostty;
 - `.config/herdr/config.toml` — workspaces, вкладки и AI-агенты внутри терминала;
 - `.config/aerospace/aerospace.toml` — tiling window manager AeroSpace и hotkeys;
 - `.config/fastfetch/config.jsonc` — system info в терминале;
 - `.config/git/config` — Git aliases и defaults;
+- `.config/lazygit/config.yml` — lazygit с diff через delta;
 - `.config/nvim` — Neovim-конфигурация с `lazy.nvim`;
 - `.config/zed/settings.json` — настройки редактора Zed.
 
@@ -64,34 +65,23 @@ mode по `Esc` отключён.
 
 ## Установка
 
-Склонировать репозиторий и создать симлинки:
+Склонировать репозиторий, поставить пакеты и создать симлинки:
 
 ```sh
 git clone <repo-url> ~/dotfiles
-ln -sfn ~/dotfiles/.zshenv ~/.zshenv
-ln -sfn ~/dotfiles/.zprofile ~/.zprofile
-ln -sfn ~/dotfiles/.zshrc ~/.zshrc
-mkdir -p ~/.config
-ln -sfn ~/dotfiles/.config/{aerospace,fastfetch,ghostty,git,nvim} ~/.config/
-ln -sfn ~/dotfiles/.config/{starship.toml,wezterm} ~/.config/
+cd ~/dotfiles
+brew bundle
+./install.sh
 exec zsh -l
 ```
 
-Herdr подключается отдельно: только `config.toml`, поскольку каталог также
-содержит runtime-данные. Инструкция и бинды — в
-[`.config/herdr/README.md`](./.config/herdr/README.md).
+`install.sh` можно запускать повторно. Существующие файлы он не удаляет, а
+переименовывает в `*.bak.<timestamp>`. У Herdr и Zed подключается только файл
+конфига, поскольку в их каталогах лежат и другие данные. Шрифт
+[Obel Mono](https://typographic.systems/obel-mono) (SIL OFL) скрипт скачивает в
+`~/Library/Fonts` и проверяет по SHA-256; установленный шрифт не обновляет.
 
-Zed также подключается отдельным файлом `settings.json`, чтобы сохранить
-остальное содержимое `~/.config/zed`. Команды подключения — в
-[`.config/zed/README.md`](./.config/zed/README.md).
-
-Конфигурация ожидает установленные через Homebrew утилиты:
-
-```sh
-brew install aerospace bat eza fastfetch fd fzf ghostty ripgrep starship wezterm zoxide zsh-autosuggestions zsh-syntax-highlighting
-```
-
-Опционально: `python3`, `uv`, `nvim`, `torch` (для alias `gpu`), OrbStack и файл `~/.zshrc.local` для локальных переопределений. Для Git измените `user.name` и `user.email` в `.config/git/config` на свои.
+Опционально: `torch` (для alias `gpu`) и файл `~/.zshrc.local` для локальных переопределений. Для Git измените `user.name` и `user.email` в `.config/git/config` на свои.
 
 ## Проверка
 
