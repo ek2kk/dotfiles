@@ -17,7 +17,7 @@ brew install node
 - Leader — `Space`, local leader — `\\`.
 - Relative numbers, `4` spaces, clipboard `unnamedplus`, persistent undo,
   `scrolloff=10`, smart case search, splits вправо и вниз.
-- `OneDark`, Treesitter, lualine и render-markdown.
+- `Kanagawa Dragon` с прозрачным фоном, Treesitter, lualine и render-markdown.
 - `Snacks`: explorer, picker, grep, dashboard и notifications.
 - LSP через Mason: `lua_ls`, `ruff`, `ty`, `bashls`; completion — `blink.cmp`.
 - Format on save: Prettier (JSON/YAML/Markdown), Stylua (Lua), Ruff (Python),

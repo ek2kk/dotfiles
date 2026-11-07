@@ -40,7 +40,7 @@
     line-numbers = true
     side-by-side = false
     features     = decorations
-    syntax-theme = OneHalfDark
+    syntax-theme = ansi
 
 [delta "interactive"]
     keep-plus-minus-markers = true

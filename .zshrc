@@ -94,7 +94,7 @@ source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # ---------- Better defaults ----------
 export LESS="-R"
-export BAT_THEME="TwoDark"
+export BAT_THEME="ansi"
 
 # ---------- Other aliases ------------
 alias v="nvim"

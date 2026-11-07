@@ -12,4 +12,4 @@
 | `lazygit/` | Git TUI lazygit | [README](./lazygit/README.md) |
 | `nvim/` | Neovim и плагины `lazy.nvim` | [README](./nvim/README.md) |
 | `zed/` | Настройки редактора Zed | [README](./zed/README.md) |
-| `starship.toml` | Prompt Starship, палитра Catppuccin Mocha | [корневой README](../README.md#starship) |
+| `starship.toml` | Prompt Starship, палитра Kanagawa Dragon | [корневой README](../README.md#starship) |

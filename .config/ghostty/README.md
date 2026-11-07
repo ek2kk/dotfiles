@@ -4,7 +4,7 @@
 
 - Font: `Obel Mono`, `14pt`; `ss01` скрывает секреты точками на экране, сам текст
   не меняется; cursor — block.
-- Theme: `Atom One Dark`; непрозрачное окно с padding `10px`.
+- Theme: `Kanagawa Dragon`; прозрачность `0.9` с размытием, padding `10px`.
 - `Cmd-T` открывает новую вкладку.
 - `copy-on-select = true`; закрытие окна не запрашивает подтверждение.
 - `macos-option-as-alt = left`: левый Option работает как Alt (например,

@@ -5,7 +5,7 @@
 ## Состав
 
 - `.zshenv`, `.zprofile`, `.zshrc` — Zsh, Homebrew, OrbStack, aliases, `zoxide`, `fzf` и плагины;
-- `.config/starship.toml` — prompt Starship в палитре Catppuccin Mocha;
+- `.config/starship.toml` — prompt Starship в палитре Kanagawa Dragon;
 - `.config/ghostty/config` — терминал Ghostty;
 - `.config/herdr/config.toml` — workspaces, вкладки и AI-агенты внутри терминала;
 - `.config/aerospace/aerospace.toml` — tiling window manager AeroSpace и hotkeys;
@@ -28,7 +28,7 @@ history между shell-сессиями.
 
 - `compinit`, completion menu, case-insensitive matching и completion внутри слова.
 - Prompt — Starship из [`.config/starship.toml`](./.config/starship.toml):
-  Catppuccin Mocha, Git/Python/Node/Rust/Go/Docker context и длительность команд
+  Kanagawa Dragon, Git/Python/Node/Rust/Go/Docker context и длительность команд
   от `500ms`.
 - Включены `zsh-autosuggestions` и `zsh-syntax-highlighting`.
 
@@ -60,7 +60,7 @@ mode по `Esc` отключён.
 - Python: `py` → `python3`, `activate` активирует `.venv`; `gpu` выводит версии
   PyTorch и доступность CUDA/MPS. Установлены `PYTHONDONTWRITEBYTECODE=1`,
   `PYTHONUNBUFFERED=1` и `UV_LINK_MODE=copy`.
-- `LESS=-R`, `BAT_THEME=TwoDark`; локальные изменения можно держать в
+- `LESS=-R`, `BAT_THEME=ansi`; локальные изменения можно держать в
   `~/.zshrc.local` — он загружается последним.
 
 ## Установка

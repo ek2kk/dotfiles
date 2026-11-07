@@ -16,7 +16,20 @@ $cmd_duration\
 $line_break\
 $character"""
 
-palette = "catppuccin_mocha"
+palette = "kanagawa_dragon"
+
+# Same color names as catppuccin_mocha, so modules work with either palette.
+# Values come from the Kanagawa Dragon theme in Ghostty and Neovim.
+[palettes.kanagawa_dragon]
+red = "#c4746e"
+peach = "#b6927b"
+yellow = "#c4b28a"
+green = "#8a9a7b"
+sky = "#8ea4a2"
+sapphire = "#8ea4a2"
+blue = "#8ba4b0"
+lavender = "#8992a7"
+mauve = "#a292a3"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

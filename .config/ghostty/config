@@ -9,11 +9,12 @@ cursor-style = block
 # ---------- Window ----------
 window-padding-x = 10
 window-padding-y = 10
-background-opacity = 1.0
+background-opacity = 0.90
+background-blur-radius = 20
 
 
 # ---------- Color Theme (preset) ----------
-theme = Atom One Dark
+theme = "Kanagawa Dragon"
 
 # ---------- Colors (True Black Catppuccin) ----------
 # background = #000000
