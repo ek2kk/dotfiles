@@ -46,5 +46,6 @@ theme = Atom One Dark
 confirm-close-surface = false
 copy-on-select = true
 macos-option-as-alt = left
+shell-integration-features = ssh-env,ssh-terminfo
 
 keybind = cmd+t=new_tab

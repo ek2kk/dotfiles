@@ -7,3 +7,7 @@
 - Автоконвертация line endings: `input`; включены `preloadindex` и compression `9`.
 - Aliases: `st` (`status -sb`), `co`, `br`, `ci`, `lg` (graph log).
 - Git LFS включён через filter `lfs`.
+- Diff показывает [delta](https://github.com/dandavison/delta), тема `OneHalfDark`.
+  Без установленного `git-delta` команды с pager выдадут ошибку.
+
+[`ignore`](./ignore) — глобальный список игнорируемых файлов, Git читает его сам.

@@ -10,7 +10,7 @@ new_cwd = "follow"
 
 [keys]
 # Press Ctrl-B, release Ctrl, then press the action key (English layout).
-# Cmd shortcuts stay with WezTerm; Option shortcuts stay with AeroSpace.
+# Cmd shortcuts stay with Ghostty; Option shortcuts stay with AeroSpace.
 prefix = "ctrl+b"
 
 # Tabs: create, close, cycle, select by number.
@@ -39,11 +39,38 @@ goto = "prefix+g"
 detach = "prefix+q"
 reload_config = "prefix+shift+r"
 
+# Open the active pane's directory in Finder
+[[keys.command]]
+key = "prefix+f"
+type = "shell"
+command = 'open "$HERDR_ACTIVE_PANE_CWD"'
+
+# Close all other panes in the current tab
+[[keys.command]]
+key = "prefix+shift+o"
+type = "shell"
+command = '''herdr pane list | jq -r --arg t "$HERDR_ACTIVE_TAB_ID" --arg p "$HERDR_ACTIVE_PANE_ID" '.result.panes[] | select(.tab_id == $t and .pane_id != $p) | .pane_id' | xargs -n1 herdr pane close'''
+
+# Open lazygit in a new pane
+[[keys.command]]
+key = "prefix+shift+l"
+type = "pane"
+command = 'cd "$HERDR_ACTIVE_PANE_CWD" && lazygit'
+
 [ui]
 confirm_close = false
 prompt_new_tab_name = false
 show_agent_labels_on_pane_borders = true
 status_indicators = "dots"
+hide_tab_bar_when_single_tab = true
+window_title = "{workspace}: {terminal_title}"
 
 [ui.toast]
 delivery = "system"
+
+# Show Claude's session title instead of the agent name
+[ui.sidebar.agents.rows_by_agent]
+claude = [["state_icon", "machine", "workspace", "tab"], ["terminal_title_stripped"]]
+
+[experimental]
+pane_history = true
