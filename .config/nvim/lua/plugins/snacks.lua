@@ -43,7 +43,14 @@ return {
     explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+      sources = {
+        files = { hidden = true },
+        grep = { hidden = true },
+        grep_word = { hidden = true },
+      },
+    },
     notifier = { enabled = true },
   },
   keys = {
@@ -55,8 +62,8 @@ return {
     { "<leader>fs", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>fc", function() Snacks.picker.grep_word() end, desc = "Grep word" },
     { "<leader>fk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
-    { "<leader>nf", function() Snacks.picker.files({ cwd = vault }) end, desc = "Find vault note" },
-    { "<leader>ng", function() Snacks.picker.grep({ cwd = vault }) end, desc = "Grep vault" },
+    { "<leader>nf", function() Snacks.picker.files({ cwd = vault, hidden = false }) end, desc = "Find vault note" },
+    { "<leader>ng", function() Snacks.picker.grep({ cwd = vault, hidden = false }) end, desc = "Grep vault" },
     { "<leader>ne", function() Snacks.explorer({ cwd = vault }) end, desc = "Explore vault" },
     { "<leader>na", archive_note, desc = "Archive vault note" },
     {

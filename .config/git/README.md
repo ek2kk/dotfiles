@@ -7,6 +7,3 @@
 - Автоконвертация line endings: `input`; включены `preloadindex` и compression `9`.
 - Aliases: `st` (`status -sb`), `co`, `br`, `ci`, `lg` (graph log).
 - Git LFS включён через filter `lfs`.
-
-Локальные credential helpers для `origin.cursor.com` также определены в этом
-файле.

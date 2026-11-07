@@ -40,7 +40,7 @@
 
 | Клавиши | Режим | Что делает |
 | --- | --- | --- |
-| `<leader>ff` | Normal | Найти файлы в текущей директории |
+| `<leader>ff` | Normal | Найти файлы в текущей директории, включая скрытые |
 | `<leader>fr` | Normal | Найти недавно открытые файлы |
 | `<leader>fs` | Normal | Поиск строки по проекту |
 | `<leader>fc` | Normal | Поиск строки под курсором по проекту |
@@ -52,6 +52,9 @@
 | --- | --- | --- |
 | `<leader>gg` | Normal | Открыть LazyGit через Snacks |
 | `<leader>gd` | Normal | Открыть CodeDiff для проверки изменений |
+| `<leader>gb` | Normal | Показать blame текущей строки |
+| `<leader>gB` | Normal | Показать blame всего файла |
+| `<leader>gh` | Normal | Застейджить hunk под курсором / снять со стейджа |
 
 Для LazyGit нужен исполняемый файл `lazygit` (`brew install lazygit`).
 В CodeDiff: `]f` / `[f` — файлы, `]c` / `[c` — изменения,

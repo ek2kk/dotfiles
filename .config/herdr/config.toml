@@ -2,7 +2,7 @@
 onboarding = false
 
 [theme]
-name = "one-dark"
+name = "terminal"
 auto_switch = false
 
 [terminal]
@@ -40,7 +40,7 @@ detach = "prefix+q"
 reload_config = "prefix+shift+r"
 
 [ui]
-confirm_close = true
+confirm_close = false
 prompt_new_tab_name = false
 show_agent_labels_on_pane_borders = true
 status_indicators = "dots"
